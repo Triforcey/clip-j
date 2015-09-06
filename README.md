@@ -1,7 +1,7 @@
 # clip-j
 A JavaScript Flash free clipboard implementation.
 ## Include in JavaScript
-&lt;script src="https://cdn.rawgit.com/Triforcey/clip-j/2ea7a480db5deca1db34bb66c3027e96df3054bb/clip-j.js" &gt;&lt;/script&gt;
+&lt;script src="https://cdn.rawgit.com/Triforcey/clip-j/c84ead3dfbec99585f7665b0bfbb2bdad39deb59/clip-j.js" &gt;&lt;/script&gt;
 ## Usage
 clip('text-to-copy');
 ## Important!
