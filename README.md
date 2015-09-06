@@ -7,5 +7,7 @@ clip('text-to-copy');
 
 clip('&lt;img src="image to copy"&gt;);
 
+## Important!
+For security reasons, this only works when the user caused the clip command to run. This can be caused through clicking something, to something as little as moving their cursor.
 # PLEASE REPORT ANY BUGS! THANK YOU!
 # ;-)
