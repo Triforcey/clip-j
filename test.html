@@ -38,6 +38,9 @@
 
 		function paste2() {
 			if (text.value == input) {
+				var temp = text.value;
+				text.remove();
+				document.write('<br> <br>' + temp);
 				alert('It worked!');
 			} else {
 				alert('It failed.');
