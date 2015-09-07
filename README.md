@@ -7,6 +7,6 @@ clip('text-to-copy');
 ## Important!
 For security reasons, this only works when the user caused the clip command to run. This can be caused through clicking something, or something as little as moving their cursor.
 ## Test Page
-https://cdn.rawgit.com/Triforcey/clip-j/38f83f60df497f1a334c1e72e4378654db64da95/test.html
+https://cdn.rawgit.com/Triforcey/clip-j/d2646aa39c171ccf8effcce90bdfe454bb67bdc5/test.html
 # PLEASE REPORT ANY BUGS! THANK YOU!
 # ;-)
