@@ -8,10 +8,40 @@
 		<button onclick="copy()">Click Here</button>
 	</body>
 	<script>
+		var text;
+		var input;
+		var finished;
+
 		function copy() {
-			var text = prompt('What would you like to copy?', 'Type text here.');
-			clip(text);
-			prompt('Copy finished, you can try pasting below.', 'Paste here.');
+			input = prompt('What phrase do you want to copy?');
+			try {
+				clip(input);
+			} catch (e) {
+				document.write('There was an error: ' + '<p style="color: red;">' + '</p>');
+			} finally {
+				if (typeof e !== undefined) {
+					document.write('The copy worked! Of course by that, we mean no errors were reported, so you may attempt a paste in the textbox below. <br>');
+					text = document.createElement('input');
+					text.setAttribute('type', 'text');
+					text.setAttribute('onpaste', 'paste()');
+					text = document.body.appendChild(text);
+					text.focus();
+					finished = true;
+					document.write('<br> You man now paste.');
+				}
+			}
+		}
+
+		function paste() {
+			setTimeout(paste2, 500);
+		}
+
+		function paste2() {
+			if (text.value == input) {
+				alert('It worked!');
+			} else {
+				alert('It failed.');
+			}
 		}
 	</script>
 </html>
