@@ -14,12 +14,21 @@
 
 		function copy() {
 			input = prompt('What phrase do you want to copy?');
+			var error;
 			try {
 				clip(input);
 			} catch (e) {
-				document.write('There was an error: ' + '<p style="color: red;">' + '</p>');
+				document.write('There was an error: ' + '<p style="color: red; display: inline-block; margin: 0px;">' + e + '</p>');
+				if (e == 'ReferenceError: clip is not defined') {
+					document.write('<p style="color: red;">It appears this page cannot reach the clip-j source. Chances are, you are either offline, or this is an error on our part. If you suspect this error is on are part, please report this error with the source code of this page (ctrl u), if you can obtain it. There is also a chance this is an old link. In this case check the README.md of clip-j for the latest link.</p>');
+					document.write('<a href="view-source:' + document.location.href + '" target="_blank">Source Code</a>');
+				} else {
+					document.write('<p style="color: red;">Please report this error, with the pages source code (ctrl u), if you can obtain it.</p>');
+					document.write('<a href="view-source:' + document.location.href + '" target="_blank">Source Code</a>');
+				}
+				error = e;
 			} finally {
-				if (typeof e !== undefined) {
+				if (typeof error === 'undefined') {
 					document.write('The copy worked! Of course by that, we mean no errors were reported, so you may attempt a paste in the textbox below. <br>');
 					text = document.createElement('input');
 					text.setAttribute('type', 'text');
@@ -43,6 +52,9 @@
 				document.write('<br> <br>' + temp);
 				alert('It worked!');
 			} else {
+				var temp = text.value;
+				text.remove();
+				document.write('<br> <br>' + temp);
 				alert('It failed.');
 			}
 		}
