@@ -4,6 +4,11 @@ function clip(text) {
 	copyElement.setAttribute('value', text);
 	copyElement = document.body.appendChild(copyElement);
 	copyElement.select();
-	document.execCommand('copy');
-	copyElement.remove();
+	try {
+		document.execCommand('copy');
+	} catch (e) {
+		copyElement.remove();
+		console.log("document.execCommand('copy'); is not supported");
+		prompt('Copy the text below. (ctrl c, enter)');
+	}
 }
