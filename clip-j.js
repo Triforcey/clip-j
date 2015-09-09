@@ -9,6 +9,6 @@ function clip(text) {
 	} catch (e) {
 		copyElement.remove();
 		console.log("document.execCommand('copy'); is not supported");
-		prompt('Copy the text below. (ctrl c, enter)');
+		prompt('Copy the text below. (ctrl c, enter)', text);
 	}
 }
