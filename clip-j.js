@@ -10,5 +10,9 @@ function clip(text) {
 		copyElement.remove();
 		console.log("document.execCommand('copy'); is not supported");
 		prompt('Copy the text below. (ctrl c, enter)', text);
+	} finally {
+		if (typeof e == 'undefined') {
+			copyElement.remove();
+		}
 	}
 }
