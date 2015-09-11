@@ -16,3 +16,14 @@ function clip(text) {
 		}
 	}
 }
+function clipImage(imgsrc) {
+	var canvas = document.createElement('canvas');
+	var img = document.createElement('img');
+	img.setAttribute('src', imgsrc);
+	canvas.width = img.clientWidth;
+	canvas.height = img.clientHeight;
+	var idc = canvas.getContext('2d');
+	idc.drawImage(imgsrc, 0, 0);
+	var imgd = canvas.toDataURL();
+	clip(imgd);
+}
