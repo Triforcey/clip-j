@@ -19,6 +19,7 @@ function clip(text) {
 function clipImage(imgsrc) {
 	var canvas = document.createElement('canvas');
 	var img = new Image();
+	img.setAttribute('crossOrigin', 'anonymous');
 	img.src = imgsrc;
 	img.onload = function() {
 		canvas.width = img.width;
