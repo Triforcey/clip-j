@@ -20,6 +20,7 @@ function clipImage(imgsrc) {
 	var canvas = document.createElement('canvas');
 	var img = document.createElement('img');
 	img.setAttribute('src', imgsrc);
+	img = document.body.appendChild(img);
 	canvas.width = img.clientWidth;
 	canvas.height = img.clientHeight;
 	var idc = canvas.getContext('2d');
