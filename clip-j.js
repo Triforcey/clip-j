@@ -18,14 +18,15 @@ function clip(text) {
 }
 function clipImage(imgsrc) {
 	var canvas = document.createElement('canvas');
-	var img = document.createElement('img');
-	img.setAttribute('src', imgsrc);
-	img = document.body.appendChild(img);
-	canvas.width = img.clientWidth;
-	canvas.height = img.clientHeight;
-	var idc = canvas.getContext('2d');
-	idc.drawImage(img, 0, 0);
-	var imgd = canvas.toDataURL();
-	img.remove();
-	clip(imgd);
+	var img = new Image();
+	img.src = imgsrc;
+	img.onload = function() {
+		canvas.width = img.width;
+		canvas.height = img.height;
+		var idc = canvas.getContext('2d');
+		idc.drawImage(img, 0, 0);
+		var imgd = canvas.toDataURL();
+		img.remove();
+		clip(imgd);
+	};
 }
