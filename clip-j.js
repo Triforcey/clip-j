@@ -26,8 +26,7 @@ function clipImage(imgsrc) {
 		canvas.height = img.height;
 		var idc = canvas.getContext('2d');
 		idc.drawImage(img, 0, 0);
-		var imgd = canvas.toDataURL();
-		img.remove();
+		var imgd = canvas.toDataURL('image/png');
 		clip(imgd);
 	};
 }
