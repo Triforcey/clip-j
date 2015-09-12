@@ -16,7 +16,7 @@ function clip(text) {
 		}
 	}
 }
-function clipImage(imgsrc) {
+/*function clipImage(imgsrc) {
 	var canvas = document.createElement('canvas');
 	var img = new Image();
 	img.setAttribute('crossOrigin', 'anonymous');
@@ -44,4 +44,4 @@ function clipImage(imgsrc) {
 			}
 		}
 	};
-}
+}*/
