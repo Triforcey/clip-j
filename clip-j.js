@@ -5,7 +5,7 @@ function clip(text) {
 	copyElement = document.body.appendChild(copyElement);
 	copyElement.select();
 	try {
-		if(!document.execCommand('copy')); throw 'Not allowed.';
+		if(!document.execCommand('copy')) throw 'Not allowed.';
 	} catch(e) {
 		copyElement.remove();
 		console.log("document.execCommand('copy'); is not supported");
